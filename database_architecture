@@ -1,0 +1,21 @@
+{
+	"_id" : 0,
+	"name" : "ink labs",
+	"type" : "parc",
+	"block" : "Lauzelle",
+	"address":{
+		"loc" : { "lng" : 4.382596 , "lat" : 50.839815 },
+		"street" : "Rue de Bonne Espérance",
+		"number" : "4, 202",
+		"zip" : "1348",
+		"city" : "Louvain-la-Neuve"
+	},
+	"phone" : "0488581404",
+	"mail" : "info@inklabs.be",
+	"web" : "http://www.inklabs.be",
+	"sun_start" : "14:00",
+	"sun_end" : "18:00",
+	"sits" : 2,
+	"info" : "petite terrasse réservée aux clients d'ink labs.",
+	"opening" : "fermé le dimanche et le mardi"
+}
