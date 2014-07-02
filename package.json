@@ -10,7 +10,8 @@
     "lodash": "~2.4.1",
     "mongoose": "~3.8.8",
     "request": "^2.34.0",
-    "prerender-node": "~1.0.1"
+    "prerender-node": "~1.0.1",
+    "geocoder": "*"
   },
   "engines": {
     "node": ">=0.10.0"
