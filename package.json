@@ -1,21 +1,23 @@
 {
-  "name": "terazApp",
-  "version": "0.0.1",
+  "name": "terazapp",
+  "version": "0.0.0",
   "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
   "dependencies": {
-    "express": "~4.2.0",
-    "static-favicon": "~1.0.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
-    "body-parser": "~1.0.0",
-    "debug": "~0.7.4",
-    "jade": "~1.3.0",
-    "mongoose": "*",
-    "mongoskin": "*",
-    "monk": "*",
-    "underscore": "*"
+    "aws-sdk": "^2.0.0-rc13",
+    "connect-mongo": "~0.4.0",
+    "ejs": "~0.8.4",
+    "express": "~3.4.3",
+    "lodash": "~2.4.1",
+    "mongoose": "~3.8.8",
+    "request": "^2.34.0",
+    "prerender-node": "~1.0.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "start": "PORT=3000 node server",
+    "watch": "PORT=9000 nodemon server",
+    "prod": "NODE_ENV=production PORT=80 node server"
   }
 }
