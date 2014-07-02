@@ -9,6 +9,23 @@ var mongoose = require('mongoose'),
 // GET TERAZ
 router.get('/teraz', function(req, res) {
 	var limit = req.param('limit') ? req.param('limit') : 10 ;
+
+	var maxDistance = typeof req.params.maxDistance !== 'undefined' ? req.params.maxDistance : 0.09; //TODO: validate
+    var geo  =  typeof req.params.geo !== 'undefined' ? req.params.geo.split(',') : new Array(25.466667, 65.016667); //TODO: validate
+
+    var lonLat = { $geometry :  { type : "Point" , coordinates : geo } };
+
+
+    // Teraz.find({ loc: {
+    //     $near: lonLat,
+    //     $maxDistance: maxDistance
+    // }}).exec(function(err,venues){
+    //     if (err)
+    //         res.send(500, 'Error #101: '+err);
+    //     else 
+    //         res.send(venues);
+    //     }); 
+
 	// return Teraz.find({}, function (err, data) {
 	// 	if (!err) {
 	// 		return res.json(data);
@@ -18,17 +35,26 @@ router.get('/teraz', function(req, res) {
 	// });
 
 	var db = req.db;
+
  	// db.collection('teraz').find({
  	// 	loc: { $near : [4.382596, 50.839815] }
  	// }).toArray(function (error, items) {
  	//     res.json(items);
  	// });
 
+
+
  	db.collection('teraz').find({
- 		loc : { $geoWithin :
-	             { $centerSphere :
-	                [ [ 4.382596 , 50.839815 ] , 39599 ]
-	  } } } ).toArray(function (error, items) {
+ 		loc:{
+ 			$near:{
+ 				$geometry:{
+ 					type:"Point",
+					coordinates : [4.382596, 50.839815]
+				} ,
+				$maxDistance : 1000000
+			}
+        }
+ 	}, function (error, items) {
  	    res.json(items);
  	});
 

@@ -8,11 +8,8 @@ var TerazSchema = new Schema({
 	name : {type: String, required: true},
 	type : {type: String, required: true, default: 'terrasse'},
 	block : {type: String, required: true},
+	loc: { type: {}, index: '2dsphere', sparse: true },
 	address:{
-		loc : {
-			type: { type: String },
-			coordinates: []
-		},
 		street : {type: String, required: true},
 		number : {type: String, required: true},
 		zip : {type: String, required: true},
@@ -33,6 +30,17 @@ var TerazSchema = new Schema({
 	'toJSON': {virtuals: true},
 	'toObject': {virtuals: true}
 });
-//TerazSchema.index({address: { loc: '2dsphere' }});
+
+TerazSchema.pre('save', function (next) {
+  var value = that.get('loc');
+
+  if (value === null) return next();
+  if (value === undefined) return next();
+  if (!Array.isArray(value)) return next(new Error('Coordinates must be an array'));
+  if (value.length === 0) return that.set(path, undefined);
+  if (value.length !== 2) return next(new Error('Coordinates should be of length 2'))
+
+  next();
+});
 
 mongoose.model('Teraz', TerazSchema);
