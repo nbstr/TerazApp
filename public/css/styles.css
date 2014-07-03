@@ -195,7 +195,8 @@ RESULTATS
 	border:none;
 }
 
-
+a{
+}
 .street{
  	background-image: url('../assets/marker.png');
 }
@@ -222,12 +223,17 @@ RESULTATS
 	background-color: #68A0B5;
 	border-bottom:3px solid #558398;
 	border-radius: 10px;
-	font-family:  caviarDreams;
+	font-family:  caviarDreams_bold;
 	font-size: 1.3em;
 	display: inline-block;
 	padding: 10px 40px;
 	color:#FFF;
 	
+}
+
+.light_text{
+	font-family: caviarDreams;
+	font-size:0.9em;
 }
 
 .meteo{
@@ -326,24 +332,49 @@ input[type="text"]
 
 ::-webkit-input-placeholder {
 	padding-left:15px;
-   font-family: caviarDreams_bold;
-	font-size:1.1em;
+    font-family: caviarDreams_bold;
+	font-size:1em;
+	
 }
 :-moz-placeholder { /* Firefox 18- */
-   font-family: caviarDreams;
+    padding-left:15px;
+    font-family: caviarDreams_bold;
+	font-size:1em;
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-   font-family: caviarDreams;
+   padding-left:15px;
+    font-family: caviarDreams_bold;
+	font-size:1em;
 }
 :-ms-input-placeholder {  
-   font-family: caviarDreams;
+	padding-left:15px;
+    font-family: caviarDreams_bold;
+	font-size:1em;
+	text-align: center;
 }
 
+label{
+	font-family: caviarDreams_bold;
+	color:#404140;
+	font-size:1.4em;
+}
 legend{
 	padding-top:30px;
 	font-family: caviarDreams_bold;
 	color:#404140;
 	font-size:1.4em;
 }
+
+.small_input{
+	display:inline;
+	width:25%;
+}
+
+#suntime{
+	margin 0 auto;
+	width: 50%;
+    margin: 0 auto;
+}
+
 
 

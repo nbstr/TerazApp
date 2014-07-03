@@ -23,8 +23,8 @@
 	<!-- List of Teraz -->
 	<div data-role="page" id="list">
 		
-		<div id="landing-page">
-		</div>
+		<!--<div id="landing-page">
+		</div>-->
 		
 		<div class="app-header">
 			<a class="left-menu" href="#new-teraz" data-transition="slidedown"></a>
@@ -41,10 +41,10 @@
 			        <ul class="list">
 			        	<li class="topcoat-list__item">
 				        	<h1>Red Monkeys</h1>
-				        	<div class="street"><i></i>11, Place du Chatelain</div>
-				        	<div class="seats"><i></i>32</div>
-				        	<div class="schedule"><i></i>14h-18h</div>
-				        	<a href="#map" data-transition="slide">200m <i></i></a>
+				        	<div class="street">11, Place du Chatelain</div>
+				        	<div class="seats">32</div>
+				        	<div class="schedule">14h-18h</div>
+				        	<a href="#map" data-transition="slide" data-role="none">200<span class="light_text">m</span></a>
 			        	</li>
 			        	<!-- content -->
 			        </ul>
@@ -114,8 +114,8 @@
 				</form>
 		
 			<ul>
-				<li><a href="#">Crédits</a></li>
-				<li><a href="#">Conditions Générales</a></li>
+				<li><a href="#" data-role="none">Crédits</a></li>
+				<li><a href="#" data-role="none">Conditions Générales</a></li>
 			</ul>
 		</div>
 
@@ -141,13 +141,15 @@
 					
 					<legend>Heures d'ensoleillement</legend>
 					
-					<label for="min">
-						<input id="min" name="min" data-role="none"/>
-					 Min</label>
-					<label for="max">
-					<input id="max" name="max" data-role="none"/> 
-					 Max
-					</label>
+					<div id="suntime">
+						<label for="min">
+							<input class="small_input" type="text" placeholder="00" id="min" name="min" data-role="none"/>
+						 h à</label>
+						<label for="max">
+							<input class="small_input" id="max" placeholder="00" type="text" name="max" data-role="none"/> 
+						 h
+						</label>
+					</div>
 					
 				</fieldset>
 				
@@ -169,7 +171,7 @@
 		    function addItems(x) {
 		        for (var i = 0; i < x; i++) {
 		            itemCount++;
-		            $list.prepend('<li class="topcoat-list__item">Item ' + itemCount + '<br><br><a href="#map" data-transition="slide">Google Maps</a></li>');
+		            $list.prepend('<li class="topcoat-list__item">Item ' + itemCount + '<br><br><a href="#map" data-role="none" data-transition="slide">Google Maps</a></li>');
 		        }
 		    }
 	
