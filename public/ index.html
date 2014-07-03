@@ -11,14 +11,16 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.css" />
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.js"></script>
-
 	<script src="lib/jquery.plugin.pullToRefresh.js"></script>
+	<!--ANGULAR-->
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+	<script type="text/javascript" src="scripts/apps.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head> 
 
-<body style="background-color:#F5F5F5;"> 
+<body style="background-color:#F5F5F5;" ng-app="terrAps"> 
 
 	<!-- List of Teraz -->
 	<div data-role="page" id="list">
@@ -35,15 +37,15 @@
 		</div>
 		
 
-		<div data-role="content">
+		<div data-role="content" ng-controller="terraceCtrl as terrace">
 			<div class="scrollable">
 			    <div class="wrap">
 			        <ul class="list">
-			        	<li class="topcoat-list__item">
-				        	<h1>Red Monkeys</h1>
-				        	<div class="street">11, Place du Chatelain</div>
-				        	<div class="seats">32</div>
-				        	<div class="schedule">14h-18h</div>
+			        	<li class="topcoat-list__item" ng-repeat="location in terrace.terraces">
+				        	<h1>{{location.name}}</h1>
+				        	<div class="street" ng-show="location.address">{{location.address.number}},{{location.address.street}} </div>
+				        	<div class="seats" ng-show="location.sits">{{location.sits}}</div>
+				        	<div class="schedule" ng-show="locations.sun_start || location.sun_end">{{location.sun_start}}h-{{location.sun_end}}h</div>
 				        	<a href="#map" data-transition="slide" data-role="none">200<span class="light_text">m</span></a>
 			        	</li>
 			        	<!-- content -->
@@ -205,7 +207,7 @@
 		//        });
 
 		    // Populate the list with 20 items at startup
-		    addItems(2);
+		    addItems(0);
 
 		}());
 	</script>
