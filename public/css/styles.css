@@ -28,12 +28,27 @@ GENERAL LAYOUT
 	background-size:40px;
 }
 
+.app-header .left-menu.back{
+	left: 10px;
+	background-image:url('../assets/arrow_left.png');
+	background-size:40px;
+}
+
+
 .app-header .right-menu{
 	right: 10px;
 	background-image:url('../assets/settings.png');
-	background-size:40px;
-	
+	background-size:40px;	
 }
+
+.app-header .right-menu.save{
+	background-image: url('../assets/checkmark.png');
+	background-size:40px;
+}
+
+
+
+
 
 .app-header .left-menu, .app-header .right-menu{
 	position: absolute;
@@ -296,7 +311,7 @@ form+ul{
 }
 
 form+ul li{
-	padding:10px 0;
+	padding-top:5px;
 	background-repeat: no-repeat;
 	background-image:url('../assets/arrow_right_black.png');
 	background-position: right center;
@@ -305,9 +320,9 @@ form+ul li{
 	
 }
 
-.ui-body-c .ui-link {
-color:#404041;
-text-decoration: none;
+ul a{
+	text-decoration: none;
+	color:#404140;
 }
 
 
@@ -327,7 +342,7 @@ input{
 
 input[type="text"]
 {
-    font-size:1.2em;
+    font-size:1.1em;
 }
 
 ::-webkit-input-placeholder {
