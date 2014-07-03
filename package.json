@@ -13,7 +13,8 @@
     "prerender-node": "~1.0.1",
     "geocoder": "*",
     "formidable": "*",
-    "node-tsv-json": "*"
+    "node-tsv-json": "*",
+    "multi-geocoder": "*"
   },
   "engines": {
     "node": ">=0.10.0"
