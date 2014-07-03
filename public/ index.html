@@ -131,7 +131,28 @@
 		</div>
 
 		<div data-role="content">	
-			<p><br><br><br><br>Add a new teraz here.</p>
+			
+			<form method="post" action="#">
+				<label for="terrace_name"><input type="text" name="terrace_name" placeholder="Nom de la terrasse" id="terrace_name" data-role="none"/></label>
+				<label for="adress"><input type="text" name="adress" placeholder="Adresse complète" id="adress" data-role="none"/></label>
+				<label for="seats"><input type="text" name="seats" placeholder="places assises" id="seats" data-role="none"/></label>
+				
+				<fieldset>
+					
+					<legend>Heures d'ensoleillement</legend>
+					
+					<label for="min">
+						<input id="min" name="min" data-role="none"/>
+					 Min</label>
+					<label for="max">
+					<input id="max" name="max" data-role="none"/> 
+					 Max
+					</label>
+					
+				</fieldset>
+				
+			</form>
+			
 		</div>
 
 	</div>

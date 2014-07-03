@@ -286,7 +286,7 @@ form+ul{
 	font-family:  caviarDreams;
 	font-size:1.3em;
 	font-weight: bold;
-	border-top: 1px solid #E0E1E1;
+	border-top: 1px solid #9EA0A3;
 }
 
 form+ul li{
@@ -305,5 +305,45 @@ text-decoration: none;
 }
 
 
+/*********************************
+ADD TERRAZ
+*********************************/
+
+input{
+	display:block;
+	width:90%;
+	margin: 0 auto;
+	margin-top:20px;
+	min-height: 40px;
+	border:none;
+	border-top:3px solid #E0E0E1;
+}
+
+input[type="text"]
+{
+    font-size:1.2em;
+}
+
+::-webkit-input-placeholder {
+	padding-left:15px;
+   font-family: caviarDreams_bold;
+	font-size:1.1em;
+}
+:-moz-placeholder { /* Firefox 18- */
+   font-family: caviarDreams;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   font-family: caviarDreams;
+}
+:-ms-input-placeholder {  
+   font-family: caviarDreams;
+}
+
+legend{
+	padding-top:30px;
+	font-family: caviarDreams_bold;
+	color:#404140;
+	font-size:1.4em;
+}
 
 
