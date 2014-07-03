@@ -25,7 +25,11 @@
 			<a class="left-menu" href="#new-teraz" data-transition="slidedown"></a>
 			<h1>TerazApp</h1>
 			<a class="right-menu" href="#settings" data-transition="slidedown"></a>
+			<div class="info-ter">
+				<!--<p> <span class="nbr-ter"></span> Terrasses sont ensoleillées pour l'instant</p>-->
+			</div>
 		</div>
+		
 
 		<div data-role="content">
 			<div class="scrollable">
@@ -110,6 +114,8 @@
 		            $list.prepend('<li class="topcoat-list__item">Item ' + itemCount + '<br><br><a href="#map" data-transition="slide">Google Maps</a></li>');
 		        }
 		    }
+	
+			$(".info-ter").append("<p>"+"<strong>"+itemCount+"</srtong>"+" terrasses sont ensoleillées pour l'instant."+"</p>");
 
 		    $('.scrollable').pullToRefresh({
 		        callback: function () {

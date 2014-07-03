@@ -17,6 +17,7 @@ GENERAL LAYOUT
 	font-style: normal;
 	border-bottom: 4px solid #527D8B;
 	font-family:  caviarDreams_Bold;
+	position:absolute;
 }
 .app-header h1{
 	text-decoration: none;
@@ -50,8 +51,28 @@ GENERAL LAYOUT
 	color:#FFF;
 }
 
+
+.info-ter{
+	
+	background:#FAAF40;
+	position: relative;
+	bottom:1px;
+	min-height:  40px;
+	text-align:center;
+	font-family: caviarDreams;
+	color:#FFF;
+	font-size:1.1em;
+	vertical-align: middle;
+}
+
+.info-ter p {
+	line-height:40px;
+
+}
+
 .list {
     border-top: none;
+	
 }
 
 .scrollable {
@@ -161,7 +182,9 @@ RESULTATS
 	margin: 0 0 10px;
 	font-family: caviarDreams;
 }
-
+.list li:first-child{
+	margin-top:16%;
+}
 .list li:last-child{
 	border:none;
 }
