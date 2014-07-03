@@ -18,10 +18,15 @@
 
 .app-header .left-menu{
 	left: 10px;
+	background-image:url('../assets/plus.png');
+	background-size:40px;
 }
 
 .app-header .right-menu{
 	right: 10px;
+	background-image:url('../assets/settings.png');
+	background-size:40px;
+	
 }
 
 .app-header .left-menu, .app-header .right-menu{
@@ -29,8 +34,6 @@
 	top:10px;
 	width: 40px;
 	height: 40px;
-	background-color: blue;
-
 	text-align: center;
 	text-decoration: none;
 	text-shadow: none;
