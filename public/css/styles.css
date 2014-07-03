@@ -2,7 +2,6 @@
 GENERAL LAYOUT
 ***************************/
 
-
 .app-header{
 	height: 60px;
 	background-color: #68A0B5;
@@ -152,6 +151,16 @@ GENERAL LAYOUT
   src: url("../font/CaviarDreams_Bold.ttf");
 }
 
+/*********************************
+LANDING PAGE
+*********************************/
+
+#landing-page{
+	background-color:red;
+	z-index:10000;
+	width:100%;
+	height:100%;
+}
 
 /*********************************
 RESULTATS
@@ -217,6 +226,7 @@ RESULTATS
 	font-size: 1.3em;
 	display: inline-block;
 	padding: 10px 40px;
+	color:#FFF;
 	
 }
 
@@ -232,6 +242,7 @@ RESULTATS
 
 .meteo ul {
 	font-family: caviarDreams;
+	text-shadow:none;
 	font-size:0.9em;
 	list-style-type: none;
 	display:inline-block;
@@ -255,6 +266,44 @@ background-image:url('../assets/cloudy.png');
 .sun{
 background-image:url('../assets/sun.png');	
 }
+
+/*********************************
+SETTINGS
+*********************************/
+
+form{
+	margin-top:100px;
+	margin-bottom:110px;
+}
+
+label.ui-slider {
+	font-family:  caviarDreams_bold;
+	font-size: 1.4em;
+}
+
+form+ul{
+	list-style-type:none;
+	font-family:  caviarDreams;
+	font-size:1.3em;
+	font-weight: bold;
+	border-top: 1px solid #E0E1E1;
+}
+
+form+ul li{
+	padding:10px 0;
+	background-repeat: no-repeat;
+	background-image:url('../assets/arrow_right_black.png');
+	background-position: right center;
+	background-size:30px;
+	line-height: 45px;
+	
+}
+
+.ui-body-c .ui-link {
+color:#404041;
+text-decoration: none;
+}
+
 
 
 

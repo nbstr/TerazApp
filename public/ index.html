@@ -5,8 +5,7 @@
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"> 
 
-	<link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.css"/>
-    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+	
 
 	<!-- JQUERY -->
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.css" />
@@ -14,19 +13,24 @@
 	<script src="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.js"></script>
 
 	<script src="lib/jquery.plugin.pullToRefresh.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head> 
 
 <body style="background-color:#F5F5F5;"> 
 
 	<!-- List of Teraz -->
 	<div data-role="page" id="list">
-
+		
+		<div id="landing-page">
+		</div>
+		
 		<div class="app-header">
 			<a class="left-menu" href="#new-teraz" data-transition="slidedown"></a>
 			<h1>TerazApp</h1>
 			<a class="right-menu" href="#settings" data-transition="slidedown"></a>
 			<div class="info-ter">
-				<!--<p> <span class="nbr-ter"></span> Terrasses sont ensoleillées pour l'instant</p>-->
 			</div>
 		</div>
 		
@@ -101,8 +105,18 @@
 			<h1>Settings</h1>
 		</div>
 
-		<div data-role="content">	
-			<p><br><br><br><br>Edit settings here.</p>
+		<div data-role="content">
+			
+		
+				<form method="post" action="#">
+					<label for="distance">Distance de recherche</label>
+					<input type="range" name="distance" id="distance" value="10" min="100" max="100"/>	
+				</form>
+		
+			<ul>
+				<li><a href="#">Crédits</a></li>
+				<li><a href="#">Conditions Générales</a></li>
+			</ul>
 		</div>
 
 	</div>
