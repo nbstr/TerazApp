@@ -23,6 +23,6 @@
   "scripts": {
     "start": "PORT=3000 node .",
     "watch": "PORT=9000 nodemon .",
-    "prod": "NODE_ENV=production PORT=80 node ."
+    "prod": "NODE_ENV=production PORT=3000 node ."
   }
 }
