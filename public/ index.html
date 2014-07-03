@@ -14,7 +14,8 @@
 	<script src="lib/jquery.plugin.pullToRefresh.js"></script>
 	<!--ANGULAR-->
 	<script type="text/javascript" src="lib/angular.min.js"></script>
-		<script type="text/javascript" src="scripts/app.js"></script>
+		<script type="text/javascript" src="scripts/terrApps.js"></script>
+		<script type="text/javascript" src="scripts/controller.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
@@ -54,7 +55,7 @@
 			</div>
 		</div>
 		
-		<div class="meteo" ng-controller="">
+		<div class="meteo">
 			<ul>
 				<li>Maint.</li>
 				<li class="cloud icon-weather"></li>
@@ -80,13 +81,12 @@
 	</div>
 	<!-- List of Teraz -->
 
-
-
 	<!-- Google Map -->
 	<div data-role="page" id="map">
-
-		<div data-role="header">
+			<div class="app-header">
+			<a class="left-menu" href="#new-teraz" data-transition="slidedown"></a>
 			<h1>TerazApp</h1>
+			<a class="right-menu" href="#settings" data-transition="slidedown"></a>
 		</div>
 
 		<div data-role="content">	
