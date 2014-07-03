@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html> 
+<html ng-app="app"> 
 <head> 
 	<title>Page Title</title> 
 	<meta charset="utf-8"/>
@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head> 
 
-<body style="background-color:#F5F5F5;" ng-app="terrAps"> 
+<body style="background-color:#F5F5F5;" ng-controller="TerraceCtrl"> 
 
 	<!-- List of Teraz -->
 	<div data-role="page" id="list">
@@ -36,15 +36,15 @@
 		</div>
 		
 
-		<div data-role="content" ng-controller="terraceCtrl as terrace">
+		<div data-role="content">
 			<div class="scrollable">
 			    <div class="wrap">
 			        <ul class="list">
-			        	<li class="topcoat-list__item" ng-repeat="location in terrace.terraces">
-				        	<h1>{{location.name}}</h1>
-				        	<div class="street" ng-show="location.address" >{{location.address.number}},{{location.address.street}}</div>
-				        	<div class="seats" ng-show="location.sits" >{{location.sits}}</div>
-				        	<div class="schedule" ng-show="location.sun_start && location.sun_end">{{location.sun_start}}h-{{location.sun_end}}h</div>
+			        	<li class="topcoat-list__item" ng-repeat="terrace in DATA">
+				        	<h1>{{terrace.name}}</h1>
+				        	<div class="street" ng-show="terrace.address" >{{terrace.address.number}}, {{terrace.address.street}}</div>
+				        	<div class="seats" ng-show="terrace.sits" >{{terrace.sits}}</div>
+				        	<div class="schedule" ng-show="terrace.sun_start && terrace.sun_end">{{terrace.sun_start}}h-{{terrace.sun_end}}h</div>
 				        	<a href="#map" data-transition="slide" data-role="none">200<span class="light_text">m</span></a>
 			        	</li>
 			        	<!-- content -->
@@ -161,53 +161,6 @@
 		</div>
 
 	</div>
-	<!-- New -->
 
-
-	<script>
-		(function () {
-
-		    var $list = $('.list'),
-		            itemCount = 0;
-
-		    // Add x dummy items to the list
-		    function addItems(x) {
-		        for (var i = 0; i < x; i++) {
-		            itemCount++;
-		            $list.prepend('<li class="topcoat-list__item">Item ' + itemCount + '<br><br><a href="#map" data-role="none" data-transition="slide">Google Maps</a></li>');
-		        }
-		    }
-	
-			$(".info-ter").append("<p>"+"<strong>"+itemCount+"</srtong>"+" terrasses sont ensoleillées pour l'instant."+"</p>");
-
-		    $('.scrollable').pullToRefresh({
-		        callback: function () {
-		            var deferred = $.Deferred();
-
-		            setTimeout(function () {
-		                // Simulate a refresh: add 3 items to the list
-		                addItems(3);
-		                deferred.resolve();
-		            }, 2000);
-
-		            return deferred.promise();
-		        }
-		    });
-
-		//  Example of a typical use of pull-to-refresh where an ajax call is made to get the latest items
-		//        $('.scrollable').pullToRefresh({
-		//            callback: function () {
-		//                var promise = $.ajax({url: "http://myserver.com/myendpoint", dataType: "json", type: "GET"}).done(function (data) {
-		//                    // Add new items to the list
-		//                });
-		//                return promise;
-		//            }
-		//        });
-
-		    // Populate the list with 20 items at startup
-		    addItems(0);
-
-		}());
-	</script>
 </body>
 </html>

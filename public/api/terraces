@@ -4,6 +4,9 @@
         "name": "Bois Savanes in Town",
         "type": "Restaurant",
         "block": "Jourdan/Etterbeek/CEE",
+        "sun_start": "14",
+        "sun_end": "18",
+        "sits": 45,
         "loc": {
             "lng": 4.382595999999999,
             "lat": 50.8396045,

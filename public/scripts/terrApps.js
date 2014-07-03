@@ -1,1 +1,1 @@
-angular.module('terrAps',[]);
+angular.module('app',[]);
