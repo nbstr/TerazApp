@@ -1,3 +1,9 @@
+/****************************
+GENERAL LAYOUT
+***************************/
+
+	 
+
 .app-header{
 	height: 60px;
 	background-color: #68A0B5;
@@ -7,6 +13,7 @@
 	right: 0px;
 	font-style: normal;
 	border-bottom: 4px solid #527D8B;
+	font-family:  caviarDreams_Bold;
 }
 .app-header h1{
 	text-decoration: none;
@@ -111,6 +118,17 @@
 	left: 0;
 }
 
+
+/*@FONT-FACE
+========================*/
+@font-face {
+  font-family: caviarDreams;
+  src: url("../font/CaviarDreams.ttf"); 
+  font-family: caviarDreams_Bold;
+  src: url("../font/CaviarDreams_Bold.ttf");
+}
+
+
 /*********************************
 RESULTATS
 *********************************/
@@ -124,3 +142,4 @@ RESULTATS
 	border-bottom: solid 3px #9E9D9D;
 	
 }
+
