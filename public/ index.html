@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html> 
+<html ng-app> 
 <head> 
 	<title>Page Title</title> 
 	
@@ -14,13 +14,13 @@
 	<script src="lib/jquery.plugin.pullToRefresh.js"></script>
 	<!--ANGULAR-->
 	<script type="text/javascript" src="lib/angular.min.js"></script>
-	<script type="text/javascript" src="scripts/apps.js"></script>
+	<script type="text/javascript" src="apps.js"></script>
 	
 	<link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.css"/>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 </head> 
 
-<body style="background-color:#F5F5F5;" ng-app="terrAps"> 
+<body style="background-color:#F5F5F5;" ng-controller="TerraceCtrl"> 
 
 	<!-- List of Teraz -->
 	<div data-role="page" id="list">
@@ -37,7 +37,7 @@
 		</div>
 		
 
-		<div data-role="content" ng-controller="terraceCtrl as terrace">
+		<div data-role="content">
 			<div class="scrollable">
 			    <div class="wrap">
 			        <ul class="list">
