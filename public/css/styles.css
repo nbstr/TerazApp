@@ -2,7 +2,11 @@
 GENERAL LAYOUT
 ***************************/
 
-	 
+/*body{
+	
+	font-family: caviarDreams;
+}*/
+
 .app-header{
 	height: 60px;
 	background-color: #68A0B5;
@@ -120,9 +124,12 @@ GENERAL LAYOUT
 
 /*@FONT-FACE
 ========================*/
-@font-face {
+@font-face{
   font-family: caviarDreams;
   src: url("../font/CaviarDreams.ttf"); 
+}
+
+@font-face {
   font-family: caviarDreams_Bold;
   src: url("../font/CaviarDreams_Bold.ttf");
 }
@@ -137,32 +144,62 @@ RESULTATS
 	width:80%;
 	margin: 0 auto;
 	list-style-type:none;
-	margin-top: 3%;
+	margin-top: 2%;
 	border-bottom: solid 3px #9E9D9D;
-	
+	padding:1% 5% 5% 5%;
 }
 
+.topcoat-list__item  h1{
+	font-family: caviarDreams_bold;
+	font-size:1.6em;
+}
 .topcoat-list__item div{
 	min-height: 20px;
 	background-repeat: no-repeat;
 	background-size: 30px 30px;
 	padding:9px 0 0 40px;
 	margin: 0 0 10px;
+	font-family: caviarDreams;
 }
 
-.street{
- background-image: url('../assets/marker.png');
+.list li:last-child{
+	border:none;
+}
 
+
+.street{
+ 	background-image: url('../assets/marker.png');
 }
 
 .seats{
-background-image: url('../assets/chair.png');
+	background-image: url('../assets/chair.png');
 }
 
 .schedule{
-background-image: url('../assets/sun.png');
+	background-image: url('../assets/sun.png');
+	display:inline-block;						/*TO ALIGN WITH BUTTON*/
 }
 
+
+.topcoat-list__item a{
+	
+	background-image:url('../assets/arrow_right.png');
+	background-size:30px;
+	font-size: 1.3em;
+	background-repeat:no-repeat;
+	background-position: center right;
+	text-decoration: none;
+	color: #FFF;
+	margin: 0 0 0 35%;
+	background-color: #68A0B5;
+	border-bottom:3px solid #558398;
+	border-radius: 10px;
+	font-family:  caviarDreams;
+	display: inline-block;
+	padding: 10px 40px;
+	color:#FFF;
+	
+}
 
 
 
