@@ -14,7 +14,8 @@
     "geocoder": "*",
     "formidable": "*",
     "node-tsv-json": "*",
-    "multi-geocoder": "*"
+    "multi-geocoder": "*",
+    "request": "*"
   },
   "engines": {
     "node": ">=0.10.0"
