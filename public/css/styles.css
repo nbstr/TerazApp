@@ -3,7 +3,6 @@ GENERAL LAYOUT
 ***************************/
 
 	 
-
 .app-header{
 	height: 60px;
 	background-color: #68A0B5;
@@ -142,4 +141,28 @@ RESULTATS
 	border-bottom: solid 3px #9E9D9D;
 	
 }
+
+.topcoat-list__item div{
+	min-height: 20px;
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	padding:9px 0 0 40px;
+	margin: 0 0 10px;
+}
+
+.street{
+ background-image: url('../assets/marker.png');
+
+}
+
+.seats{
+background-image: url('../assets/chair.png');
+}
+
+.schedule{
+background-image: url('../assets/sun.png');
+}
+
+
+
 
