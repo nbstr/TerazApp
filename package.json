@@ -11,14 +11,16 @@
     "mongoose": "~3.8.8",
     "request": "^2.34.0",
     "prerender-node": "~1.0.1",
-    "geocoder": "*"
+    "geocoder": "*",
+    "formidable": "*",
+    "node-tsv-json": "*"
   },
   "engines": {
     "node": ">=0.10.0"
   },
   "scripts": {
-    "start": "PORT=3000 node server",
-    "watch": "PORT=9000 nodemon server",
-    "prod": "NODE_ENV=production PORT=80 node server"
+    "start": "PORT=3000 node .",
+    "watch": "PORT=9000 nodemon .",
+    "prod": "NODE_ENV=production PORT=80 node ."
   }
 }
