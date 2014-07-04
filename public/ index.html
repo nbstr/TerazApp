@@ -58,24 +58,24 @@
 		
 		<div class="meteo">
 			<ul>
-				<li>Maint.</li>
+				<li>{{ FORECAST[0].time }}</li>
 				<li class="cloud icon-weather"></li>
-				<li>14&deg;</li>
+				<li>{{ FORECAST[0].temp }}</li>
 			</ul>
 			<ul>
-				<li>14h</li>
+				<li>{{ FORECAST[1].time }}</li>
 				<li class="cloudy icon-weather"></li>
-				<li>16&deg;</li>
+				<li>{{ FORECAST[1].temp }}&deg;</li>
 			</ul>
 			<ul>
-				<li>15h</li>
+				<li>{{ FORECAST[2].time }}</li>
 				<li class="sun icon-weather"></li>
-				<li>16&deg;</li>
+				<li>{{ FORECAST[2].temp }}&deg;</li>
 			</ul>
 			<ul>
-				<li>16h</li>
+				<li>{{ FORECAST[3].time }}</li>
 				<li class="sun icon-weather"></li>
-				<li>18&deg;</li>
+				<li>{{ FORECAST[3].temp }}&deg;</li>
 			</ul>
 		</div>
 		
