@@ -31,6 +31,7 @@ app.use(function (req, res, next) {
 
     // ALLOW CONNECTION
     res.setHeader('Access-Control-Allow-Origin', '*');
+    // res.setHeader('Access-Control-Allow-Origin', 'http://54.213.206.26');
 
     // ALLOW METHODS
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
