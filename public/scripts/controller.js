@@ -9,8 +9,8 @@ function TerraceCtrl($scope, $http, $geo){
                 console.error(response);
             })
             .then(function(response){
-                console.log(response);
                 $scope.DATA = response.data;
+                console.log($scope.DATA);
             });
 
             $http.get(u('api/forecast?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude))
@@ -42,7 +42,7 @@ function TerraceCtrl($scope, $http, $geo){
 
     $scope.init = function(){
 
-        $scope.radius = 1000;
+        $scope.radius = 100000;
 
         $scope.get_data();
     };
