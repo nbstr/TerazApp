@@ -1,13 +1,18 @@
-function TerraceCtrl($scope, $http){
+function TerraceCtrl($scope, $http, $geo){
 
     $scope.get_terraces = function(){
-        $http.get('api/terraces')
-        .error(function(response){
-            console.error(response);
-        })
-        .then(function(response){
-            console.log(response);
-            $scope.DATA = response.data;
+
+        $geo.position(function(position){
+
+            $http.get(u('api/terraces?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + $scope.radius))
+            .error(function(response){
+                console.error(response);
+            })
+            .then(function(response){
+                console.log(response);
+                $scope.DATA = response.data;
+            });
+
         });
 
     };
@@ -27,6 +32,9 @@ function TerraceCtrl($scope, $http){
     };
 
     $scope.init = function(){
+
+        $scope.radius = 1000;
+
         $scope.get_terraces();
     };
     $scope.init();

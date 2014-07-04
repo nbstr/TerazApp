@@ -26,6 +26,25 @@ var m_p = path.join(__dirname, 'lib/mod');
 
 var app = express();
 
+// ADD HEADERS
+app.use(function (req, res, next) {
+
+    // ALLOW CONNECTION
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8888');
+
+    // ALLOW METHODS
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // ALLOW HEADERS
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+    // ALLOW COOKIES
+    res.setHeader('Access-Control-Allow-Credentials', true);
+
+    // NEXT
+    next();
+});
+
 // EXPRESS SETTINGS
 require('./lib/config/express')(app);
 
