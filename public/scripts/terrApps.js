@@ -34,7 +34,7 @@ return function (input) {
     if (input >= 1000) {
         return (input/1000).toFixed(2);
     } else {
-        return input;
+        return Math.floor(input);
     }
 }
 })
