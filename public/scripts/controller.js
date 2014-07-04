@@ -32,7 +32,9 @@ function TerraceCtrl($scope, $http, $geo){
             callback: function () {
 
                 setTimeout(function () {
+
                     alert('coucou');
+                    
                 }, 2000);
 
             }
