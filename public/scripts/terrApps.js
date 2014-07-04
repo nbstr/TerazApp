@@ -28,4 +28,13 @@ angular.module('app',[])
             return parseInt(google.maps.geometry.spherical.computeDistanceBetween(point1, point2));
         }
     }
-});
+})
+.filter('distance', function () {
+return function (input) {
+    if (input >= 1000) {
+        return (input/1000).toFixed(2);
+    } else {
+        return input;
+    }
+}
+})

@@ -10,7 +10,7 @@
 	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.3.0-beta.1/jquery.mobile-1.3.0-beta.1.min.js"></script>
 	<script src="lib/jquery.plugin.pullToRefresh.js"></script>
-	<!--ANGULAR-->
+	<!-- ANGULAR -->
 	<script type="text/javascript" src="lib/angular.min.js"></script>
 	<script type="text/javascript" src="scripts/functions.js"></script>
 	<script type="text/javascript" src="scripts/terrApps.js"></script>
@@ -48,7 +48,9 @@
 				        	<div class="street" ng-show="terrace.address" >{{terrace.address.number}}, {{terrace.address.street}} {{terrace.address.zip}}</div>
 				        	<div class="seats" ng-show="terrace.sits" >{{terrace.sits}}</div>
 				        	<div class="schedule" ng-show="terrace.sun_start && terrace.sun_end">{{terrace.sun_start}}h-{{terrace.sun_end}}h</div>
-				        	<a href="#map" data-transition="slide" data-role="none">200<span class="light_text">m</span></a>
+				        	<a href="#map" data-transition="slide" data-role="none">{{terrace.loc.distance | distance}}
+				        		<span class="light_text">{{(terrace.loc.distance >= 1000) && 'km' || 'm'}}</span>
+				        	</a>
 			        	</li>
 			        	<!-- content -->
 			        </ul>
