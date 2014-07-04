@@ -1,0 +1,95 @@
+[
+    {
+        "_id": "53b4958254e1ce58bc85f359",
+        "name": "Bois Savanes in Town",
+        "type": "Restaurant",
+        "block": "Jourdan/Etterbeek/CEE",
+        "loc": {
+            "lng": 4.382595999999999,
+            "lat": 50.8396045,
+            "distance": 23.43261687803312
+        },
+        "address": {
+            "street": "Froissart",
+            "number": "69",
+            "zip": "1040"
+        },
+        "opening": "Samedi Midi et dimanche"
+    },
+    {
+        "_id": "53b4961954e1ce58bc85f35a",
+        "name": "Plasch Brugmann",
+        "type": "Restaurant",
+        "block": "Brugmann",
+        "loc": {
+            "lng": 4.3555123,
+            "lat": 50.81737640000001,
+            "distance": 3140.9821757311865
+        },
+        "address": {
+            "street": "place George Brugmann",
+            "number": "34",
+            "zip": "1040"
+        },
+        "phone": "023443210",
+        "sits": 45,
+        "opening": "dimanche"
+    },
+    {
+        "_id": "53b4961954e1ce58bc85f35a",
+        "name": "Plasch Brugmann",
+        "type": "Restaurant",
+        "block": "Brugmann",
+        "loc": {
+            "lng": 4.3555123,
+            "lat": 50.81737640000001,
+            "distance": 3140.9821757311865
+        },
+        "address": {
+            "street": "place George Brugmann",
+            "number": "34",
+            "zip": "1040"
+        },
+        "phone": "023443210",
+        "sits": 45,
+        "opening": "dimanche"
+    },
+    {
+        "_id": "53b4961954e1ce58bc85f35a",
+        "name": "Plasch Brugmann",
+        "type": "Restaurant",
+        "block": "Brugmann",
+        "loc": {
+            "lng": 4.3555123,
+            "lat": 50.81737640000001,
+            "distance": 3140.9821757311865
+        },
+        "address": {
+            "street": "place George Brugmann",
+            "number": "34",
+            "zip": "1040"
+        },
+        "phone": "023443210",
+        "sits": 45,
+        "opening": "dimanche"
+    },
+    {
+        "_id": "53b4961954e1ce58bc85f35a",
+        "name": "Plasch Brugmann",
+        "type": "Restaurant",
+        "block": "Brugmann",
+        "loc": {
+            "lng": 4.3555123,
+            "lat": 50.81737640000001,
+            "distance": 3140.9821757311865
+        },
+        "address": {
+            "street": "place George Brugmann",
+            "number": "34",
+            "zip": "1040"
+        },
+        "phone": "023443210",
+        "sits": 45,
+        "opening": "dimanche"
+    }
+]

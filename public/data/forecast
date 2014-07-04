@@ -1,0 +1,33 @@
+{
+    "error": false,
+    "data": [
+        {
+            "date": "2014-07-04 06:00:00",
+            "time": "06h",
+            "icon": "04d.png",
+            "css": "cloud",
+            "temp": "24"
+        },
+        {
+            "date": "2014-07-04 09:00:00",
+            "time": "09h",
+            "icon": "04d.png",
+            "css": "cloud",
+            "temp": "27"
+        },
+        {
+            "date": "2014-07-04 12:00:00",
+            "time": "12h",
+            "icon": "04d.png",
+            "css": "cloud",
+            "temp": "26"
+        },
+        {
+            "date": "2014-07-04 15:00:00",
+            "time": "15h",
+            "icon": "04d.png",
+            "css": "cloud",
+            "temp": "27"
+        }
+    ]
+}

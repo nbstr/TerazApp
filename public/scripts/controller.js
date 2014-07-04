@@ -4,7 +4,8 @@ function TerraceCtrl($scope, $http, $geo){
 
         $geo.position(function(position){
 
-            $http.get(u('api/terraces?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + $scope.radius))
+            //$http.get(u('api/terraces?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + $scope.radius))
+            $http.get('data/terraces')
             .error(function(response){
                 console.error(response);
             })
@@ -13,7 +14,8 @@ function TerraceCtrl($scope, $http, $geo){
                 console.log($scope.DATA);
             });
 
-            $http.get(u('api/forecast?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude))
+            //$http.get(u('api/forecast?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude))
+            $http.get('data/forecast')
             .error(function(response){
                 console.error(response);
             })
