@@ -2,10 +2,16 @@
 GENERAL LAYOUT
 ***************************/
 
+/*SMALL RESET*/
+body,ul{
+	margin:0;
+	padding:0;
+}
+
 .scrollable, body{
-	
 	background-color:#F5F5F5;
 }
+
 .app-header{
 	height: 60px;
 	background-color: #68A0B5;
@@ -238,7 +244,7 @@ a{
 .topcoat-list__item a{
 	
 	background-image:url('../assets/arrow_right.png');
-	background-size:20px;
+	background-size:18px;
 	background-repeat:no-repeat;
 	background-position: center right;
 	text-decoration: none;
@@ -253,6 +259,9 @@ a{
 	position:absolute;
 	right:10px;
 	bottom:10px;
+	font-size:0.8em;
+	text-align:center;
+	min-width:45px;
 	
 }
 
@@ -268,7 +277,9 @@ a{
 	width: 100%;
 	background-color:#404041;
 	color:#FFF;
+	text-align: center;
 }
+	
 
 .meteo ul {
 	font-family: caviarDreams_bold;
@@ -277,6 +288,7 @@ a{
 	list-style-type: none;
 	display:inline-block;
 	vertical-align: top;
+	padding:10px 15px;
 }
 
 .icon-weather{
@@ -433,6 +445,11 @@ GOOGLE MAPS
 	margin: 0 0 10px;
 
 }
+
+#map .meteo{
+text-align: left;
+}
+	
 
 
 /*************************
