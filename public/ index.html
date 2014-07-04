@@ -59,23 +59,23 @@
 		<div class="meteo">
 			<ul>
 				<li>{{ FORECAST[0].time }}</li>
-				<li class="cloud icon-weather"></li>
+				<li class="{{ FORECAST[0].css }} icon-weather"></li>
 				<li>{{ FORECAST[0].temp }}</li>
 			</ul>
 			<ul>
 				<li>{{ FORECAST[1].time }}</li>
-				<li class="cloudy icon-weather"></li>
-				<li>{{ FORECAST[1].temp }}&deg;</li>
+				<li class="{{ FORECAST[1].css }} icon-weather"></li>
+				<li>{{ FORECAST[1].temp }}</li>
 			</ul>
 			<ul>
 				<li>{{ FORECAST[2].time }}</li>
-				<li class="sun icon-weather"></li>
-				<li>{{ FORECAST[2].temp }}&deg;</li>
+				<li class="{{ FORECAST[2].css }} icon-weather"></li>
+				<li>{{ FORECAST[2].temp }}</li>
 			</ul>
 			<ul>
 				<li>{{ FORECAST[3].time }}</li>
-				<li class="sun icon-weather"></li>
-				<li>{{ FORECAST[3].temp }}&deg;</li>
+				<li class="{{ FORECAST[3].css }} icon-weather"></li>
+				<li>{{ FORECAST[3].temp }}</li>
 			</ul>
 		</div>
 		

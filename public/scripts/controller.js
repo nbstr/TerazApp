@@ -19,7 +19,7 @@ function TerraceCtrl($scope, $http, $geo){
             })
             .then(function(response){
                 $scope.FORECAST = response.data.data;
-                // console.log($scope.FORECAST);
+                console.log($scope.FORECAST);
             });
 
         });
