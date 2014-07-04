@@ -12,6 +12,7 @@ function TerraceCtrl($scope, $http, $geo){
             .then(function(response){
                 $scope.DATA = response.data;
                 console.log($scope.DATA);
+                $scope.set_terrace($scope.DATA[0]);
 
                 $http.get(u('api/forecast?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude))
                 // $http.get('data/forecast')
@@ -22,7 +23,7 @@ function TerraceCtrl($scope, $http, $geo){
                     $scope.FORECAST = response.data.data;
                     console.log($scope.FORECAST);
                 });
-                
+
             });
 
         });
@@ -45,11 +46,65 @@ function TerraceCtrl($scope, $http, $geo){
 
     };
 
+    $scope.set_terrace = function(terrace){
+        $scope.current_terrace = {
+            name:terrace.name,
+            address:terrace.address.number + ', ' + terrace.address.street + ' ' + terrace.address.zip,
+            sun:(terrace.sun_start && terrace.sun_end) ? terrace.sun_start + ' - ' + terrace.sun_end : null,
+            sits:(terrace.sits) ? terrace.sits : null,
+        };
+    };
+
+    $scope.map_marker = function(terrace){
+        console.log('click');
+        $scope.set_terrace(terrace);
+        $scope.codeAddress([terrace.address.number, terrace.address.street, terrace.address.zip].join(' '));
+    };
+
+    $scope.initialize = function() {
+        geocoder = new google.maps.Geocoder();
+        var latlng = new google.maps.LatLng(-34.397, 150.644);
+        var myOptions = {
+          zoom: 8,
+          center: latlng,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+        $('#map_canvas').css('height', window.innerHeight).css('width', window.innerWidth);
+        $scope.codeAddress('bruxelles');
+    }
+
+    $scope.codeAddress = function(address) {
+        console.log('requesting');
+        geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+            'address': address
+        }, function(results, status) {
+            console.log(results[0]);
+            if (status == google.maps.GeocoderStatus.OK) {
+                var myOptions = {
+                    zoom: 14,
+                    center: results[0].geometry.location,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            }
+        });
+    }
+
     $scope.init = function(){
+        var geocoder, map;
 
         $scope.radius = 100000;
+        $scope.current_terrace = 0;
 
         $scope.get_data();
+        $scope.initialize();
     };
     $scope.init();
 }
