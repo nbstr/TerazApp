@@ -1,21 +1,21 @@
 function TerraceCtrl($scope, $http, $geo){
 
-    $scope.get_data = function(){
+    $scope.get_data = function(radius){
 
         $geo.position(function(position){
 
-            $http.get(u('api/terraces?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + $scope.radius))
-            // $http.get('data/terraces')
+            $http.get(u('api/terraces?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + radius))
             .error(function(response){
                 console.error(response);
             })
             .then(function(response){
                 $scope.DATA = response.data;
                 console.log($scope.DATA);
-                $scope.set_terrace($scope.DATA[0]);
+                if($scope.DATA.length > 0){
+                    $scope.set_terrace($scope.DATA[0]);
+                }
 
                 $http.get(u('api/forecast?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude))
-                // $http.get('data/forecast')
                 .error(function(response){
                     console.error(response);
                 })
@@ -28,6 +28,11 @@ function TerraceCtrl($scope, $http, $geo){
 
         });
 
+    };
+
+    $scope.reload_data = function(){
+        var radius = document.getElementById('distance').value;
+        $scope.get_data(radius);
     };
 
     $scope.slide_get = function(){
@@ -100,10 +105,7 @@ function TerraceCtrl($scope, $http, $geo){
     $scope.init = function(){
         var geocoder, map;
 
-        $scope.radius = 100000;
-        $scope.current_terrace = 0;
-
-        $scope.get_data();
+        $scope.get_data(100000);
         $scope.initialize();
     };
     $scope.init();

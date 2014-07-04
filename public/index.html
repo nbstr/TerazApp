@@ -1,7 +1,8 @@
 <!DOCTYPE html> 
 <html ng-app="app"> 
     <head> 
-        <title>Page Title</title> 
+        <title>TerazApp</title>
+        <link rel="icon" type="image/png" href="favicon.png"/> 
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
@@ -126,15 +127,17 @@
             <div class="app-header">
                 <!-- <a class="left-menu back" href="#list" data-transition="slidedown" data-direction="reverse"></a> -->
                 <h1>Settings</h1>
-                <a class="right-menu save" href="#list" data-transition="slidedown"></a>
+                <a class="right-menu save" ng-click="reload_data()" href="#list" data-transition="slidedown"></a>
             </div>
 
             <div data-role="content">
 
 
-                <form method="post" action="#">
-                    <label for="distance">Distance de recherche</label>
-                    <input type="range" name="distance" id="distance" value="10" min="100" max="100"/>  
+                <form>
+
+                    <label for="distance">Distance de recherche (m)</label> <br><br>
+                    <input type="range" name="slider-step" id="distance" value="1000" min="100" max="30000"/>
+
                 </form>
 
                 <ul>
