@@ -12,6 +12,8 @@ function TerraceCtrl($scope, $http, $geo){
             .then(function(response){
                 $scope.DATA = response.data;
                 console.log($scope.DATA);
+                
+                return $scope.DATA;
             });
 
             //$http.get(u('api/forecast?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude))
