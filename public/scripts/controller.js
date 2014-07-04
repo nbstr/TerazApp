@@ -23,7 +23,6 @@ function TerraceCtrl($scope, $http, $geo){
                     console.log($scope.FORECAST);
                 });
                 
-                //return $scope.DATA;
             });
 
         });
