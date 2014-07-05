@@ -7,23 +7,22 @@ body,ul{
 	margin:0;
 	padding:0;
 }
+html, body {
+    height : 100%;
+    overflow: hidden;
+}
 
 .scrollable, body{
 	background-color:#F5F5F5;
 }
 
 .app-header{
-	height: 60px;
 	background-color: #68A0B5;
-	position: absolute;
-	top:0px;
-	left: 0px;
-	right: 0px;
 	font-style: normal;
-	border-bottom: 4px solid #527D8B;
 	font-family:  caviarDreams_Bold;
-	position:absolute;
-	z-index:450;
+	height:60px;
+	position: fixed;
+	top:0px;
 }
 .app-header h1{
 	text-decoration: none;
@@ -34,20 +33,20 @@ body,ul{
 }
 
 .app-header .left-menu{
-	left: 10px;
+	/*left: 10px;*/
 	background-image:url('../assets/plus.png');
 	background-size:35px;
 }
 
 .app-header .left-menu.back{
-	left: 10px;
+	/*left: 10px;*/
 	background-image:url('../assets/arrow_left.png');
 	background-size:35px;
 }
 
 
 .app-header .right-menu{
-	right: 10px;
+	/*right: 10px;*/
 	background-image:url('../assets/settings.png');
 	background-size:35px;	
 }
@@ -70,101 +69,41 @@ body,ul{
 	color:#FFF;
 }
 
+.content{
+	padding: 0;
+    position: fixed !important;
+    top : 60px !important; 
+    right : 0;
+    bottom : 120px !important; 
+    left : 0 !important;
+}
 
 .info-ter{
+	width: 100%;
+	margin: 0px;
 	z-index:500;
 	background-color:rgba(250,175,64,0.8);
 	text-align:center;
 	font-family: caviarDreams_bold;
 	font-weight: 0;
 	color:#FFF;
-	vertical-align: middle;
 	text-shadow:none;
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding-top: 46px;
+	padding-left: 46px;
+	padding-right: 46px;
+	padding-bottom: 16px;
+	margin-top: -40px;
+	margin-left: -46px;
 }
 
 .info-ter p {
-	line-height:40px;
 	font-weight:none;
 }
 
 .list {
-    border-top: none;
+    overflow: auto;
 	
 }
-
-.scrollable {
-	overflow-y: auto;
-	height: 100%;
-	-webkit-overflow-scrolling: touch;
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    top: 60px;
-}
-
-
-.scrollable .wrap {
-	min-height: 100%;
-	padding-bottom: 100px;
-	-webkit-transform: translateZ(0);
-}
-
-
-/****************************
-*NECESSAIRE ?
-*************************/
-.pull-to-refresh {
-	line-height: 50px;
-	height: 80px;
-	width: 100%;
-	position: absolute;
-	left: 0;
-	top: -80px;
-	padding-top:20px;
-	z-index: -1;
-}
-
-.pull-to-refresh >.message {
-	height: 50px;
-	width: 100%;
-	overflow-y: auto;
-	position: relative;
-}
-
-.pull-to-refresh >.message >i.arrow {
-	-webkit-background-size: 100% 100%;
-	-moz-background-size: 100% 100%;
-	background-size: 100% 100%;
-	display: inline-block;
-	margin-left: 10px;
-	background-position: center center;
-}
-
-.pull-to-refresh >.message >i.arrow {
-	width: 20px;
-	height: 50px;
-	background-image: url('../img/arrow_up.svg');
-}
-
-.pull-to-refresh >.message > div.spinner {
-    margin-left: 12px;
-}
-
-.pull-to-refresh >.message >span.pull,
-.pull-to-refresh >.message >span.release,
-.pull-to-refresh >.message >span.loading {
-	text-align: center;
-	display: block;
-	height: 50px;
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
 
 /*@FONT-FACE
 ========================*/
@@ -183,10 +122,14 @@ LANDING PAGE
 *********************************/
 
 #landing-page{
+	display: none;
 	background-color:red;
 	z-index:1000;
 	width:100%;
 	height:100%;
+	position: fixed;
+	top: 0px;
+	left:0px;
 }
 
 /*********************************
@@ -195,12 +138,10 @@ RESULTATS
 
 .topcoat-list__item{
 	background-color: #FFF;
-	width:80%;
+	width:90%;
 	margin: 0 auto;
 	list-style-type:none;
-	margin-top: 2%;
 	border-bottom: solid 3px #9E9D9D;
-	padding:1% 5% 5% 5%;
 }
 
 .topcoat-list__item  h1{
@@ -217,7 +158,6 @@ RESULTATS
 	font-size:0.9em;
 }
 .list li:first-child{
-	margin-top:16%;
 }
 .list li:last-child{
 	border:none;
@@ -272,9 +212,7 @@ a{
 }
 
 .meteo{
-	position:fixed;
-	bottom:0px;
-	background-color:red;
+	height:100px;
 	width: 100%;
 	background-color:#404041;
 	color:#FFF;
@@ -282,9 +220,9 @@ a{
 }
 	
 
-.meteo ul {
+.meteo .meteo-info {
 	font-family: caviarDreams_bold;
-	text-shadow:none;
+	text-shadow:none;;
 	font-size:0.9em;
 	list-style-type: none;
 	display:inline-block;
@@ -300,13 +238,31 @@ a{
 	background-repeat:no-repeat;
 }
 .cloud{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 background-image:url('../assets/cloud.png');	
 }
 
 .cloudy{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 background-image:url('../assets/cloudy.png');	
 }
 .sun{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 background-image:url('../assets/sun.png');	
 }
 
@@ -417,7 +373,7 @@ GOOGLE MAPS
 *************************/
 
 .hide{
-	visibility: hidden;
+	display: none;
 }
 
 address{
