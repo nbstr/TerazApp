@@ -1,6 +1,6 @@
 {
   "name": "terazapp",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "private": true,
   "dependencies": {
     "aws-sdk": "^2.0.0-rc13",
