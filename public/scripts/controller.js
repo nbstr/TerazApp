@@ -4,7 +4,7 @@ function TerraceCtrl($scope, $http, $geo){
 
         $geo.position(function(position){
 
-            $http.get(u('api/terraces?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + radius))
+            $http.get(u('api/terraces?limit=' + 25 + '&lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + radius))
             .error(function(response){
                 console.error(response);
             })

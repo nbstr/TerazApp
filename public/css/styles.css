@@ -3,6 +3,12 @@ GENERAL LAYOUT
 ***************************/
 
 /*SMALL RESET*/
+body, html{
+	height: 100%;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
 body,ul{
 	margin:0;
 	padding:0;
@@ -82,6 +88,9 @@ body,ul{
 	text-shadow:none;
 	padding-top: 12px;
 	padding-bottom: 12px;
+	position: absolute;
+	left: 0px;
+	right: 0px;
 }
 
 .info-ter p {
@@ -96,10 +105,9 @@ body,ul{
 
 .scrollable {
 	overflow-y: auto;
-	height: 100%;
 	-webkit-overflow-scrolling: touch;
     position: absolute;
-    bottom: 0px;
+    bottom: 60px;
     left: 0px;
     right: 0px;
     top: 60px;
@@ -107,7 +115,6 @@ body,ul{
 
 
 .scrollable .wrap {
-	min-height: 100%;
 	padding-bottom: 100px;
 	-webkit-transform: translateZ(0);
 }
@@ -220,7 +227,7 @@ RESULTATS
 	margin-top:16%;
 }
 .list li:last-child{
-	border:none;
+	/*border:none;*/
 }
 
 a{
