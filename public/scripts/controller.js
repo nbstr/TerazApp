@@ -14,14 +14,6 @@ function TerraceCtrl($scope, $http, $geo){
                 // console.log($scope.DATA);
                 if($scope.DATA.length > 0){
                     $scope.set_terrace($scope.DATA[0]);
-                    $scope.DATA.push($scope.DATA[0]);
-                    $scope.DATA.push($scope.DATA[0]);
-                    $scope.DATA.push($scope.DATA[0]);
-                    $scope.DATA.push($scope.DATA[0]);
-                    $scope.DATA.push($scope.DATA[0]);
-                    $scope.DATA.push($scope.DATA[0]);
-                    $scope.DATA.push($scope.DATA[0]);
-                    $scope.DATA.push($scope.DATA[0]);
                 }
                 // $(".list").iscrollview("refresh");
 
