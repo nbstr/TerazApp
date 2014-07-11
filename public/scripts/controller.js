@@ -1,6 +1,6 @@
 function TerraceCtrl($scope, $http, $geo){
 
-    $scope.get_data = function(radius, callback){
+    $scope.get_data = function(radius){
 
         $geo.position(function(position){
 
@@ -15,7 +15,6 @@ function TerraceCtrl($scope, $http, $geo){
                 if($scope.DATA.length > 0){
                     $scope.set_terrace($scope.DATA[0]);
                 }
-                // $(".list").iscrollview("refresh");
 
                 /*
                 $http.get(u('api/forecast?lat=' + position.coords.latitude + '&lng=' + position.coords.longitude))
@@ -28,37 +27,16 @@ function TerraceCtrl($scope, $http, $geo){
                 });
                 */
 
-                if(typeof(callback) === 'function'){
-                    callback();
-                }
-
             });
 
         });
 
     };
 
-    $scope.reload_data = function(callback){
+    $scope.reload_data = function(){
         var radius = document.getElementById('distance').value;
-        $scope.get_data(radius, callback);
+        $scope.get_data(radius);
     };
-
-    $(document).delegate("#list", "pageinit", function(event) {
-        $(".iscroll-wrapper", this).bind( {
-            iscroll_onpulldown : function(event, data){
-                alert('coucou');
-                $scope.reload_data(function(){
-                    data.iscrollview.refresh();
-                });
-            },
-            iscroll_onpullup   : function(event, data){
-                alert('coucou2');
-                $scope.reload_data(function(){
-                    data.iscrollview.refresh();
-                });
-            }
-        });
-    });
 
     $scope.slide_get = function(){
 
@@ -132,7 +110,6 @@ function TerraceCtrl($scope, $http, $geo){
 
         $scope.get_data(100000);
         $scope.initialize();
-
     };
     $scope.init();
 }
