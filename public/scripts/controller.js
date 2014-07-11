@@ -1,5 +1,14 @@
 function TerraceCtrl($scope, $http, $geo){
 
+    $('.scrollable').scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('.app-header').fadeOut();
+        }
+        else{
+            $('.app-header').fadeIn();
+        }
+    });
+
     $scope.get_data = function(radius){
 
         $geo.position(function(position){

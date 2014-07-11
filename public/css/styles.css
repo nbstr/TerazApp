@@ -110,12 +110,13 @@ body,ul{
     bottom: 60px;
     left: 0px;
     right: 0px;
-    top: 60px;
+    top: 0px;
 }
 
 
 .scrollable .wrap {
 	padding-bottom: 100px;
+	padding-top: 60px;
 	-webkit-transform: translateZ(0);
 }
 
