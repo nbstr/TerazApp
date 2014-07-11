@@ -10,6 +10,9 @@ function TerraceCtrl($scope, $http, $geo){
             })
             .then(function(response){
                 $scope.DATA = response.data.data.terraces;
+                console.log({
+                    data:response.data.data.terraces
+                });
                 $scope.FORECAST = response.data.data.forecast;
                 // console.log($scope.DATA);
                 if($scope.DATA.length > 0){
