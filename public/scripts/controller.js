@@ -2,10 +2,10 @@ function TerraceCtrl($scope, $http, $geo){
 
     $('.scrollable').scroll(function() {
         if ($(this).scrollTop() > 200) {
-            $('.app-header').fadeOut();
+            $('.app-header').fadeOut(200);
         }
         else{
-            $('.app-header').fadeIn();
+            $('.app-header').fadeIn(200);
         }
     });
 
@@ -13,7 +13,7 @@ function TerraceCtrl($scope, $http, $geo){
 
         $geo.position(function(position){
 
-            $http.get(u('api/terraces?limit=' + 100 + '&lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + radius))
+            $http.get(u('api/terraces?limit=' + 25 + '&lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + radius))
             .error(function(response){
                 console.error(response);
             })
