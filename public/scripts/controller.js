@@ -4,11 +4,32 @@ function TerraceCtrl($scope, $http, $geo){
 
         $geo.position(function(position){
 
-            $http.get(u('api/terraces?limit=' + 25 + '&lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + radius))
+            $http.get(u('api/terraces?limit=' + 100 + '&lat=' + position.coords.latitude + '&lng=' + position.coords.longitude + '&radius=' + radius))
             .error(function(response){
                 console.error(response);
             })
             .then(function(response){
+                var elmnt;
+                for (var e in response.data.data.terraces) {
+                    elmnt = response.data.data.terraces[e];
+                    if(elmnt.type != undefined){
+                        if(typeof(elmnt.type) == 'string' && (elmnt.type[0] == 'r' || elmnt.type[0] == 'R')){
+                            response.data.data.terraces[e].type = 'resto';
+                        }
+                        else if(typeof(elmnt.type) == 'string' && (elmnt.type[0] == 'b' || elmnt.type[0] == 'B')){
+                            response.data.data.terraces[e].type = 'bar';
+                        }
+                        else if(typeof(elmnt.type) == 'string' && (elmnt.type[0] == 'p' || elmnt.type[0] == 'P')){
+                            response.data.data.terraces[e].type = 'bench';
+                        }
+                        else{
+                            response.data.data.terraces[e].type = 'unknwn';
+                        }
+                    }
+                    else{
+                        response.data.data.terraces[e].type = 'unknwn';
+                    }
+                }
                 $scope.DATA = response.data.data.terraces;
                 console.log({
                     data:response.data.data.terraces
@@ -34,6 +55,15 @@ function TerraceCtrl($scope, $http, $geo){
 
         });
 
+    };
+
+    $scope.return_number = function(str_var) {
+        str_var = str_var.toString();
+        var newstr_var = '';
+        for(i=0;i<str_var.length;i++) {
+            newstr_var += (isNaN(str_var.substr(i, 1)) || str_var[i] == ' ') ? '' : str_var.substr(i, 1);
+        }
+        return newstr_var
     };
 
     $scope.reload_data = function(){

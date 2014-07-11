@@ -50,7 +50,8 @@
                     <div class="wrap">
                         <ul class="list">
                             <li class="topcoat-list__item" ng-repeat="terrace in DATA">
-                                <h1>{{terrace.name}}</h1>
+                                <h1><img ng-src="assets/{{ terrace.type }}.png" width="20" ng-hide="terrace.type=='unknwn'"> {{terrace.name}}</h1>
+
                                 <div class="street" ng-show="terrace.address" >{{terrace.address.number}}, {{terrace.address.street}} {{terrace.address.zip}}</div>
                                 <div class="seats" ng-show="terrace.sits" >{{terrace.sits}}</div>
                                 <div class="schedule" ng-show="terrace.sun_start && terrace.sun_end">{{terrace.sun_start}}h-{{terrace.sun_end}}h</div>
@@ -59,6 +60,8 @@
                                     <a href="#map" data-transition="slide" data-role="none">{{terrace.loc.distance | distance}}
                                         <span class="light_text">{{(terrace.loc.distance >= 1000) && 'km' || 'm'}}</span>
                                     </a>
+                                    <br><br>
+                                    <a class="phne" href="phone:{{return_number(terrace.phone)}}" ng-show="terrace.phone">Call<!-- {{return_number(terrace.phone)}} --></a>
                                 </span>
 
                             </li>
