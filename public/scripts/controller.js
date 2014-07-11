@@ -2,10 +2,10 @@ function TerraceCtrl($scope, $http, $geo){
 
     $('.scrollable').scroll(function() {
         if ($(this).scrollTop() > 200) {
-            $('.app-header').fadeOut(200);
+            $('#app-header').fadeOut(200);
         }
         else{
-            $('.app-header').fadeIn(200);
+            $('#app-header').fadeIn(200);
         }
     });
 
