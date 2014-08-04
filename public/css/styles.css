@@ -20,16 +20,17 @@ body,ul{
 
 .app-header{
 	height: 60px;
-	background-color: #68A0B5;
+	background-color: #2AB3E6;
 	position: absolute;
 	top:0px;
 	left: 0px;
 	right: 0px;
 	font-style: normal;
-	border-bottom: 4px solid #527D8B;
+	border-bottom: 4px solid white;
 	font-family:  caviarDreams_Bold;
 	position:absolute;
 	z-index:450;
+	text-align: center;
 }
 .app-header h1{
 	text-decoration: none;
@@ -37,6 +38,10 @@ body,ul{
 	color:#FFF;
 	text-align: center;
 	font-size: 1.5em;
+}
+
+.app-header img{
+	
 }
 
 .app-header .left-menu{
@@ -79,7 +84,7 @@ body,ul{
 
 .info-ter{
 	z-index:500;
-	background-color:rgba(250,175,64,0.8);
+	background-color:#FDC84B;
 	text-align:center;
 	font-family: caviarDreams_bold;
 	font-weight: 0;
@@ -258,7 +263,7 @@ a{
 	background-position: center right;
 	text-decoration: none;
 	text-shadow:none;
-	background-color: #68A0B5;
+	background-color: #2AB3E6;
 	border-bottom:3px solid #558398;
 	border-radius: 8px;
 	font-family:  caviarDreams_bold;
@@ -314,7 +319,8 @@ a{
 	bottom:0px;
 	background-color:red;
 	width: 100%;
-	background-color:#404041;
+	/*background-color:#404041;*/
+	background-color: rgba(0,0,0,0.6);
 	color:#FFF;
 	text-align: center;
 }
@@ -378,6 +384,9 @@ form+ul li{
 	background-size:30px;
 	line-height: 45px;
 	
+}
+.no-img{
+	background: none;
 }
 
 ul a{

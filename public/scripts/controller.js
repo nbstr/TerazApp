@@ -103,6 +103,25 @@ function TerraceCtrl($scope, $http, $geo){
             sun:(terrace.sun_start && terrace.sun_end) ? terrace.sun_start + ' - ' + terrace.sun_end : null,
             sits:(terrace.sits) ? terrace.sits : null,
         };
+
+        if(terrace.type != undefined){
+            if(typeof(terrace.type) == 'string' && (terrace.type[0] == 'r' || terrace.type[0] == 'R')){
+                $scope.current_terrace.type = 'resto';
+            }
+            else if(typeof(terrace.type) == 'string' && (terrace.type[0] == 'b' || terrace.type[0] == 'B')){
+                $scope.current_terrace.type = 'bar';
+            }
+            else if(typeof(terrace.type) == 'string' && (terrace.type[0] == 'p' || terrace.type[0] == 'P')){
+                $scope.current_terrace.type = 'bench';
+            }
+            else{
+                $scope.current_terrace.type = 'unknwn';
+            }
+        }
+        else{
+            $scope.current_terrace.type = 'unknwn';
+        }
+        
     };
 
     $scope.map_marker = function(terrace){

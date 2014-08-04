@@ -37,7 +37,7 @@
 
             <div class="app-header" id="app-header">
                 <!-- <a class="left-menu" href="#new-teraz" data-transition="slidedown"></a> -->
-                <h1>TerazApp</h1>
+                <img src="assets/logo-01.png" alt="" height="60">
                 <a class="right-menu" href="#settings" data-transition="slidedown"></a>
                 <div class="info-ter">
                 There are {{ (DATA.length) &&  DATA.length || 'no' }} terraces around
@@ -50,9 +50,10 @@
                     <div class="wrap">
                         <ul class="list">
                             <li class="topcoat-list__item" ng-repeat="terrace in DATA">
-                                <h1><img ng-src="assets/{{ terrace.type }}.png" width="20" ng-hide="terrace.type=='unknwn'"> {{terrace.name}}</h1>
+                                <h1>{{terrace.name}} <img ng-src="assets/{{ terrace.type }}.png" width="20" ng-hide="terrace.type=='unknwn'"></h1>
 
-                                <div class="street" ng-show="terrace.address" >{{terrace.address.number}}, {{terrace.address.street}} {{terrace.address.zip}}</div>
+                                <!-- <div class="street" ng-show="terrace.address" >{{terrace.address.number}}, {{terrace.address.street}} {{terrace.address.zip}}</div> -->
+
                                 <div class="seats" ng-show="terrace.sits" >{{terrace.sits}}</div>
                                 <div class="schedule" ng-show="terrace.sun_start && terrace.sun_end">{{terrace.sun_start}}h-{{terrace.sun_end}}h</div>
                                 
@@ -61,7 +62,7 @@
                                         <span class="light_text">{{(terrace.loc.distance >= 1000) && 'km' || 'm'}}</span>
                                     </a>
                                     <br><br>
-                                    <a class="phne" href="tel:{{return_number(terrace.phone)}}" ng-show="terrace.phone">Call<!-- {{return_number(terrace.phone)}} --></a>
+                                    <!-- <a class="phne" href="tel:{{return_number(terrace.phone)}}" ng-show="terrace.phone">Call {{return_number(terrace.phone)}} --><!--</a> -->
                                 </span>
 
                             </li>
@@ -101,7 +102,7 @@
         <div data-role="page" id="map">
             <div class="app-header">
                 <a class="left-menu back" href="#list" data-transition="slide" data-direction="reverse"></a>
-                <h1>TerazApp</h1>
+                <img src="assets/logo-01.png" alt="" height="60">
                 <a class="right-menu" href="#settings" data-transition="slidedown"></a>             
             </div>
             <div data-role="content" id="map_canvas">
@@ -110,7 +111,7 @@
             <div class="meteo">
                 <ul>
                     <li>
-                        <h2>{{ current_terrace.name }}</h2>
+                        <h2>{{ current_terrace.name }} <img ng-src="assets/{{ current_terrace.type }}.png" width="20" ng-hide="current_terrace.type=='unknwn'"></h2><br>
                         <p>
                         <address>{{current_terrace.address}}
                         </address>
@@ -130,8 +131,11 @@
 
             <div class="app-header">
                 <!-- <a class="left-menu back" href="#list" data-transition="slidedown" data-direction="reverse"></a> -->
-                <h1>Settings</h1>
+                <img src="assets/logo-01.png" alt="" height="60">
                 <a class="right-menu save" ng-click="reload_data()" href="#list" data-transition="slidedown"></a>
+                <div class="info-ter">
+                SETTINGS
+                </div>
             </div>
 
             <div data-role="content">
@@ -139,14 +143,15 @@
 
                 <form>
 
-                    <label for="distance">Distance de recherche (m)</label> <br><br>
+                    <label for="distance">Search Range (m)</label> <br><br>
                     <input type="range" name="slider-step" id="distance" value="1000" min="100" max="30000"/>
 
                 </form>
 
                 <ul>
-                    <li><a href="#" data-role="none">Crédits</a></li>
-                    <li><a href="#" data-role="none">Conditions Générales</a></li>
+                    <li><a href="#" data-role="none">About</a></li>
+                    <li><a href="#" data-role="none">Terms</a></li>
+                    <li class="no-img">Contact: <a href="mailto:info@terazapp.com">info@terazapp.com</a></li>
                 </ul>
             </div>
 
